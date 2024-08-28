@@ -3,7 +3,7 @@ import React from 'react';
 import webRoutes from '@/routes/webRoutes';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import DarkMode from './DarkMode';
+import DarkMode from '../Sidebar/DarkMode';
 
 function Sidebar(): React.ReactElement {
     const pathname = usePathname();
