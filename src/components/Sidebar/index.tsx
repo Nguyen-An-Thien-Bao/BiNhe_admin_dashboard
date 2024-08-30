@@ -9,7 +9,15 @@ import { SidebarContext } from '@/context/SidebarContext';
 
 function Sidebar(): React.ReactElement {
     const pathname = usePathname();
-    const { isOpen, handleOpenSidebar } = useContext(SidebarContext);
+    const { isOpen, handleOpenSidebar, windowSize } = useContext(SidebarContext);
+
+    const handleCloseSidebar = () => {
+        if (windowSize < 768) {
+            handleOpenSidebar();
+        }
+        return;
+    };
+
     return (
         <>
             <aside
@@ -41,6 +49,7 @@ function Sidebar(): React.ReactElement {
                         <Link
                             key={idx}
                             href={ele.path}
+                            onClick={handleCloseSidebar}
                             className={`${
                                 pathname === ele.path ? 'bg-green-600' : 'bg-primary-green dark:bg-primary-black'
                             } w-full capitalize font-medium flex items-center py-2 px-4 my-4 transition-colors duration-75 hover-effect`}

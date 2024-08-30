@@ -39,11 +39,14 @@ function DarkMode() {
                 onClick={handleOpenPanel}
                 className="text-white"
             >
-                {resolvedTheme === 'dark' ? (
-                    <BsFillSunFill className=" text-xl " />
-                ) : (
-                    <BsFillMoonFill className=" text-xl " />
-                )}
+                <span>
+                    {/* {resolvedTheme === 'dark' ? (
+                        <BsFillSunFill className=" text-xl " />
+                    ) : (
+                        <BsFillMoonFill className=" text-xl " />
+                    )} */}
+                    Mode
+                </span>
             </Button>
             <Menu
                 id="demo-positioned-menu"
